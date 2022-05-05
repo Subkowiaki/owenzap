@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useReducer, useRef } from "react";
 
 import { isSameDay, parseISO, format } from "date-fns";
-import openSocket from "socket.io-client";
+import openSocket from "../../services/socket-io";
 import clsx from "clsx";
 
 import { green } from "@material-ui/core/colors";
@@ -32,15 +32,11 @@ import api from "../../services/api";
 import toastError from "../../errors/toastError";
 
 const useStyles = makeStyles((theme) => ({
-  messagesListWrapper: {
-    overflow: "hidden",
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    flexGrow: 1,
-  },
-
-  messageCenter: {
+    ticketNunber: {
+      color: "#808888",
+      padding: 8,
+    },
+    messageCenter: {
     marginTop: 5,
     alignItems: "center",
     verticalAlign: "center",
@@ -59,6 +55,13 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 5,
     paddingBottom: 0,
     boxShadow: "0 1px 1px #b3b3b3",
+  },
+  messagesListWrapper: {
+    overflow: "hidden",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    flexGrow: 1,
   },
 
   messagesList: {
@@ -379,7 +382,7 @@ const MessagesList = ({ ticketId, isGroup }) => {
   }, [pageNumber, ticketId]);
 
   useEffect(() => {
-    const socket = openSocket(process.env.REACT_APP_BACKEND_URL);
+    const socket = openSocket();
 
     socket.on("connect", () => socket.emit("joinChatBox", ticketId));
 
@@ -522,16 +525,16 @@ const MessagesList = ({ ticketId, isGroup }) => {
   };
 
   const renderMessageAck = (message) => {
-    if (message.ack === 1) {
+    if (message.ack === 0) {
       return <AccessTime fontSize="small" className={classes.ackIcons} />;
     }
-    if (message.ack === 2) {
+    if (message.ack === 1) {
       return <Done fontSize="small" className={classes.ackIcons} />;
     }
-    if (message.ack === 3) {
+    if (message.ack === 2) {
       return <DoneAll fontSize="small" className={classes.ackIcons} />;
     }
-    if (message.ack === 4 || message.ack === 5) {
+    if (message.ack === 3 || message.ack === 4) {
       return <DoneAll fontSize="small" className={classes.ackDoneAllIcon} />;
     }
   };
@@ -577,6 +580,23 @@ const MessagesList = ({ ticketId, isGroup }) => {
     }
   };
 
+const renderNumberTicket = (message, index) => {
+    if (index < messagesList.length && index > 0) {
+      let messageTicket = message.ticketId;
+      let previousMessageTicket = messagesList[index - 1].ticketId;
+
+      if (messageTicket !== previousMessageTicket) {
+        return (
+          <div key={`ticket-${message.id}`} className={classes.ticketNunber}>
+            #ticket: {messageTicket}
+            <hr />
+          </div>
+        );
+      }
+    }
+  };
+
+  
   const renderMessageDivider = (message, index) => {
     if (index < messagesList.length && index > 0) {
       let messageUser = messagesList[index].fromMe;
@@ -617,10 +637,13 @@ const MessagesList = ({ ticketId, isGroup }) => {
   const renderMessages = () => {
     if (messagesList.length > 0) {
       const viewMessagesList = messagesList.map((message, index) => {
+        
+
         if (message.mediaType === "call_log") {
           return (
             <React.Fragment key={message.id}>
               {renderDailyTimestamps(message, index)}
+              {renderNumberTicket(message, index)}
               {renderMessageDivider(message, index)}
               <div className={classes.messageCenter}>
                 <IconButton
@@ -647,10 +670,12 @@ const MessagesList = ({ ticketId, isGroup }) => {
             </React.Fragment>
           );
         }
+        
         if (!message.fromMe) {
           return (
             <React.Fragment key={message.id}>
               {renderDailyTimestamps(message, index)}
+              {renderNumberTicket(message, index)}
               {renderMessageDivider(message, index)}
               <div className={classes.messageLeft}>
                 <IconButton
@@ -685,6 +710,7 @@ const MessagesList = ({ ticketId, isGroup }) => {
           return (
             <React.Fragment key={message.id}>
               {renderDailyTimestamps(message, index)}
+              {renderNumberTicket(message, index)}
               {renderMessageDivider(message, index)}
               <div className={classes.messageRight}>
                 <IconButton
