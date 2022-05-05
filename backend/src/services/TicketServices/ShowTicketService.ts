@@ -8,11 +8,11 @@ import Tag from "../../models/Tag";
 
 const ShowTicketService = async (id: string | number): Promise<Ticket> => {
   const ticket = await Ticket.findByPk(id, {
-    include: [
+        include: [
       {
         model: Contact,
         as: "contact",
-        attributes: ["id", "name", "number", "profilePicUrl"],
+        attributes: ["id", "name", "number", "profilePicUrl", "email"],
         include: ["extraInfo"]
       },
       {
