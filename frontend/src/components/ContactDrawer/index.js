@@ -10,7 +10,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-
+import ContactMailIcon from "@material-ui/icons/ContactMail";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import { i18n } from "../../translate/i18n";
 
 import ContactModal from "../ContactModal";
@@ -122,9 +123,12 @@ const ContactDrawer = ({ open, handleDrawerClose, contact, loading }) => {
 						></Avatar>
 
 						<Typography>{contact.name}</Typography>
-						<Typography>
-							<Link href={`tel:${contact.number}`}>{contact.number}</Link>
-						</Typography>
+						<Button href={`tel:${contact.number}`} variant="contained" startIcon={<WhatsAppIcon />}>
+                            {contact.number}
+                        </Button>
+						<Button href={`mailto:${contact.email}`} variant="contained" startIcon={<ContactMailIcon />}>
+                            {contact.email}
+                        </Button>
 						<Button
 							variant="outlined"
 							color="primary"
