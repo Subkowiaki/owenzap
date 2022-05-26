@@ -217,7 +217,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            Owenzap | Seu WhatsApp Web em vários computadores!
+            ALERTATECH
           </Typography>
           {user.id && <NotificationsPopOver />}
 
