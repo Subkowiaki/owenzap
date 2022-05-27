@@ -217,7 +217,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            ALERTATECH
+            Zap Fila | Multi Atendimento
           </Typography>
           {user.id && <NotificationsPopOver />}
 
