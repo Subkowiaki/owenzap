@@ -217,7 +217,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            Zap Fila | Multi Atendimento
+            ${nome_logo}
           </Typography>
           {user.id && <NotificationsPopOver />}
 
