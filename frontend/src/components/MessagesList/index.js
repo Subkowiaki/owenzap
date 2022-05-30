@@ -4,7 +4,7 @@ import { isSameDay, parseISO, format } from "date-fns";
 import openSocket from "../../services/socket-io";
 import clsx from "clsx";
 
-import { green } from "@material-ui/core/colors";
+import { blue } from "@material-ui/core/colors";
 import {
   Button,
   CircularProgress,
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   circleLoading: {
-    color: green[500],
+    color: blue[500],
     position: "absolute",
     opacity: "70%",
     top: 0,
@@ -269,7 +269,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   ackDoneAllIcon: {
-    color: green[500],
+    color: blue[500],
     fontSize: 18,
     verticalAlign: "middle",
     marginLeft: 4,
