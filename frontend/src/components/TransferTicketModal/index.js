@@ -111,6 +111,7 @@ const TransferTicketModal = ({ modalOpen, onClose, ticketid, ticketWhatsappId })
 				if (!selectedUser) {
 					data.status = 'pending';
 					data.userId = null;
+                                        data.transf = true;
 				}
 			}
 
