@@ -22,19 +22,21 @@ import { makeStyles } from "@material-ui/core/styles";
 import { i18n } from "../../translate/i18n";
 
 import { AuthContext } from "../../context/Auth/AuthContext";
+import { versionSystem } from "../../../package.json";
+import logo from '../../assets/logo.png';
 
-// const Copyright = () => {
-// 	return (
-// 		<Typography variant="body2" color="textSecondary" align="center">
-// 			{"Copyleft "}
-// 			<Link color="inherit" href="https://github.com/canove">
-// 				Canove
-// 			</Link>{" "}
-// 			{new Date().getFullYear()}
-// 			{"."}
-// 		</Typography>
-// 	);
-// };
+const Copyright = () => {
+return (
+<Typography variant="body2" color="textSecondary" align="center">
+ 			© {new Date().getFullYear()}
+      {" - "}
+			<Link color="inherit" href="https://vojoo.com.br">
+ 				VOJOO - v {versionSystem}
+ 			</Link>
+ 			{"."}
+ 		</Typography>
+ 	);
+ };
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -77,9 +79,7 @@ const Login = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlined />
-        </Avatar>
+        <img alt="logo" src={logo}></img>
         <Typography component="h1" variant="h5">
           {i18n.t("login.title")}
         </Typography>
