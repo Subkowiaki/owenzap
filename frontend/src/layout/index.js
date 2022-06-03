@@ -24,7 +24,7 @@ import UserModal from "../components/UserModal";
 import { AuthContext } from "../context/Auth/AuthContext";
 import BackdropLoading from "../components/BackdropLoading";
 import { i18n } from "../translate/i18n";
-import logodash from "../assets/logo.png";
+import logo from "../assets/logo.png";
 import { versionSystem } from "../../package.json";
 
 const drawerWidth = 240;
