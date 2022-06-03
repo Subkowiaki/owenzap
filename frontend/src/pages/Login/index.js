@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import {
-  Avatar,
   Button,
   CssBaseline,
   TextField,
@@ -15,10 +14,8 @@ import {
   Link
 } from '@material-ui/core';
 
-import { LockOutlined, Visibility, VisibilityOff } from '@material-ui/icons';
-
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { makeStyles } from "@material-ui/core/styles";
-
 import { i18n } from "../../translate/i18n";
 
 import { AuthContext } from "../../context/Auth/AuthContext";
@@ -26,17 +23,17 @@ import { versionSystem } from "../../../package.json";
 import logo from '../../assets/logo.png';
 
 const Copyright = () => {
-return (
-<Typography variant="body2" color="textSecondary" align="center">
- 			© {new Date().getFullYear()}
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      © {new Date().getFullYear()}
       {" - "}
-			<Link color="inherit" href="https://vojoo.com.br">
- 				VOJOO - v {versionSystem}
- 			</Link>
- 			{"."}
- 		</Typography>
- 	);
- };
+      <Link color="inherit" href="https://vojoo.com.br">
+        VOJOO - v {versionSystem}
+      </Link>
+      {"."}
+    </Typography>
+  );
+};
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -44,10 +41,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -80,9 +73,6 @@ const Login = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <img alt="logo" src={logo}></img>
-        <Typography component="h1" variant="h5">
-          {i18n.t("login.title")}
-        </Typography>
         <form className={classes.form} noValidate onSubmit={handlSubmit}>
           <TextField
             variant="outlined"
@@ -145,7 +135,7 @@ const Login = () => {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>{/* <Copyright /> */}</Box>
+      <Box mt={8}><Copyright /></Box>
     </Container>
   );
 };
