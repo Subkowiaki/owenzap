@@ -92,9 +92,6 @@ const SignUp = () => {
 			<CssBaseline />
 			<div className={classes.paper}>
 				<img alt="logo" src={logo}></img>
-				<Typography component="h1" variant="h5">
-					{i18n.t("signup.title")}
-				</Typography>
 				{/* <form className={classes.form} noValidate onSubmit={handleSignUp}> */}
 				<Formik
 					initialValues={user}
@@ -174,18 +171,7 @@ const SignUp = () => {
 							>
 								{i18n.t("signup.buttons.submit")}
 							</Button>
-							<Grid container justify="flex-end">
-								<Grid item>
-									<Link
-										href="#"
-										variant="body2"
-										component={RouterLink}
-										to="/login"
-									>
-										{i18n.t("signup.buttons.login")}
-									</Link>
-								</Grid>
-							</Grid>
+							
 						</Form>
 					)}
 				</Formik>
