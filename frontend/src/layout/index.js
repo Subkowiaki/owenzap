@@ -220,7 +220,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            OwenZap - v { versionSystem }
+            Whaticket Custom - v { versionSystem }
             
           </Typography>
 
