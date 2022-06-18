@@ -198,7 +198,7 @@ const LoggedInLayout = ({ children }) => {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}
-        color={process.env.NODE_ENV === "development" ? "inherit" : "primary"}
+        color={process.env.NODE_ENV === "development" ? "inherit" : "warning"}
       >
         <Toolbar variant="dense" className={classes.toolbar}>
           <IconButton
