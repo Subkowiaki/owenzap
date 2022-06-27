@@ -5,13 +5,13 @@ import Card from "../card/card";
 import SingleLineChart from "../markey-charts/line-chart";
 import { TitleH2 } from "../titles/titles";
 
-const ChartTotalSchedules: React.FC<ILineChart> = ({data,  lines, XAxisKey}) => {  
+const ChartTotalBilling: React.FC<ILineChart> = ({data,  lines, XAxisKey}) => {  
   return (
     <Card> 
-      <TitleH2 title="Evolução de agendamentos"/>  
+      <TitleH2 title="Evolução de Faturamento"/>  
       <SingleLineChart data={data} lines={lines} XAxisKey={XAxisKey} />
     </Card>
   );
 }
 
-export default ChartTotalSchedules;
+export default ChartTotalBilling;

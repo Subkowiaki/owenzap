@@ -97,11 +97,11 @@ const Tags = () => {
   const [tags, dispatch] = useReducer(reducer, []);
   const [tagModalOpen, setTagModalOpen] = useState(false);
 
-  const fetchTags = useCallback(async() => {
+  const fetchTags = useCallback(async () => {
     try {
-      const { data } = await api.get("/tags/", {
+        const { data } = await api.get("/tags/", {
         params: { searchParam, pageNumber },
-      });
+      });   
       dispatch({ type: "LOAD_TAGS", payload: data.tags });
       setHasMore(data.hasMore);
       setLoading(false);
@@ -109,6 +109,7 @@ const Tags = () => {
       toastError(err);
     }
   }, [searchParam, pageNumber]);
+ 
 
   useEffect(() => {
     dispatch({ type: "RESET" });
