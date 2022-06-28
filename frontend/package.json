@@ -19,6 +19,7 @@
     "date-fns": "^2.16.1",
     "emoji-mart": "^3.0.1",
     "formik": "^2.2.0",
+    "html2canvas": "^1.4.1",
     "i18next": "^19.8.2",
     "i18next-browser-languagedetector": "^6.0.1",
     "lodash": "^4.17.21",
