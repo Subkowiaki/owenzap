@@ -9,6 +9,7 @@ import { getLastPayment } from "../../../domain/usecases/get_last_payments";
 import { IBilling } from "../../../domain/entities/billing";
 import ListTile from "../../components/list-tile";
 import { valueFormaterBrl } from "../../../utils/value_formater_brl";
+import MarkeyContent from "../../markey-desing-system/markey-content/markey_content";
 
 const Payments: React.FC = () => {
   const [radioValue, setRadioValue] = useState('PIX');
@@ -46,7 +47,7 @@ const Payments: React.FC = () => {
   }
 
   return (
-    <Container>
+    <MarkeyContent>
       <Row>
       <TitleH1 title="Pagamentos" />    
       </Row>
@@ -114,7 +115,7 @@ const Payments: React.FC = () => {
         }            
         </Card>
       </Row>
-    </Container>    
+    </MarkeyContent>    
   );
 }
 

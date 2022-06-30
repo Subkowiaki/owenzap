@@ -7,6 +7,7 @@ import { valueFormaterBrl } from "../../../utils/value_formater_brl";
 import Card from "../../components/card/card";
 import ListTile from "../../components/list-tile";
 import { TitleH1, TitleH2 } from "../../components/titles/titles";
+import MarkeyContent from "../../markey-desing-system/markey-content/markey_content";
 import { ProfilePic } from "./store_sreport_styles";
 
 const StoreReport: React.FC = () => {
@@ -33,7 +34,7 @@ const StoreReport: React.FC = () => {
   }
 
   return (
-    <Container>
+    <MarkeyContent>
       <Row>
         <TitleH1 title="Gerar Relatório"/>
       </Row>
@@ -107,7 +108,7 @@ const StoreReport: React.FC = () => {
             </Row>
         </Card>
       </div>
-    </Container>
+    </MarkeyContent>
   );
 }
 
