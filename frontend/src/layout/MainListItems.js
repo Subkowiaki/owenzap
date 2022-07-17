@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import AddBusinessIcon from '@material-ui/icons-material/AddBusiness';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -82,7 +83,7 @@ const MainListItems = (props) => {
       <Divider />   
       <Divider />     
       <ListItemLink to="/payments" primary="Pagamentos" icon={<AccountBalanceWalletIcon />}/>
-
+      <ListItemLink to="/store-report" primary="Relatório" icon={<AddBusinessIcon />}/>
       <Divider />
       <ListSubheader inset> Configurações </ListSubheader>     
       <ListItemLink
