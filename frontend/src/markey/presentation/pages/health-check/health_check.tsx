@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap";
+import { Button, Col,  Form, Row, Spinner } from "react-bootstrap";
 import { IHealthCheck } from "../../../domain/entities/health_check";
 import { getHealthCheck } from "../../../domain/usecases/get_healthcheck";
 import { getResetLink } from "../../../domain/usecases/get_reset_link";
@@ -9,6 +9,7 @@ import ServiceInfo from "../../components/service-info/service_info";
 import StatusCard from "../../components/status-card/status_card";
 import StoreInfo from "../../components/store-info/status_card";
 import { TitleH1 } from "../../components/titles/titles";
+import MarkeyContent from "../../markey-desing-system/markey-content/markey_content";
 
 const HealthCheck: React.FC = () => {
 
@@ -47,7 +48,7 @@ const HealthCheck: React.FC = () => {
 
 
   return (
-    <Container>
+    <MarkeyContent>
       <TitleH1 title= "Check de cadastro"/>
       <Row>
       <Col xs={3} className="p-4 align-middle">
@@ -136,7 +137,7 @@ const HealthCheck: React.FC = () => {
               }           
           </Col>           
         </Row>             
-    </Container>
+    </MarkeyContent>
   );
 }
 

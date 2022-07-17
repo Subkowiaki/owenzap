@@ -24,6 +24,9 @@ import HomeDashBoard from "../markey/presentation/pages/home_dashboard/home_dash
 import Payments from "../markey/presentation/pages/payments/payments";
 import StoreReport from "../markey/presentation/pages/store-report/store_report";
 import HealthCheck from "../markey/presentation/pages/health-check/health_check";
+import LatePayments from "../markey/presentation/pages/late-payments/late_payments";
+import Churn from "../markey/presentation/pages/churn/churn_control";
+
 
 const Routes = () => {
   return (
@@ -38,6 +41,8 @@ const Routes = () => {
               <Route exact path="/payments" component={Payments} isPrivate />
               <Route exact path="/store-report" component={StoreReport} isPrivate />
               <Route exact path="/store-check" component={HealthCheck} isPrivate />
+              <Route exact path="/payments-late" component={LatePayments} isPrivate />
+              <Route exact path="/churn" component={Churn} isPrivate />
               <Route
                 exact
                 path="/tickets/:ticketId?"

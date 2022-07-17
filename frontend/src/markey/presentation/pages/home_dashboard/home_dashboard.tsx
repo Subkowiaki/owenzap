@@ -1,7 +1,7 @@
 import { Divider } from "@material-ui/core";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
-import { Col, Container, Row, } from "react-bootstrap";
+import { Col,  Row, } from "react-bootstrap";
 import { IHomeDashboardData } from "../../../domain/entities/home_dashboard_data";
 import { getHomeDashboardData } from "../../../domain/usecases/get_home_dashboard_data";
 import Card from "../../components/card/card";
@@ -13,6 +13,7 @@ import { InfoCard } from "../../components/information-card/information_card";
 import { InfoCardWhitSpan } from "../../components/information-card/information_card_with_span";
 import { Loading } from "../../components/loading/loading";
 import { TitleH1, TitleH2 } from "../../components/titles/titles";
+import MarkeyContent from "../../markey-desing-system/markey-content/markey_content";
 
 class HomeDashBoard extends Component{
   state: {
@@ -38,7 +39,7 @@ class HomeDashBoard extends Component{
   render() {  
  
     return (
-      <Container>
+      <MarkeyContent>
         <Divider/>
         <TitleH1 title="Suporte / CS "/>  
         <Row>
@@ -177,7 +178,7 @@ class HomeDashBoard extends Component{
           </Col>      
         </Row>
         
-      </Container>        
+      </MarkeyContent>        
     );
   }
 }
