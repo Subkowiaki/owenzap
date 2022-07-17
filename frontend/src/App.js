@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { ptBR } from "@material-ui/core/locale";
-import { MarkeyColors } from "./markey/presentation/markey-desing-system/markey_colors";
 
 const App = () => {
   const [locale, setLocale] = useState();
@@ -22,8 +21,8 @@ const App = () => {
         },
       },
       palette: {
-        primary: { main: MarkeyColors.brandPrimary }, 
-        secondary:  { main: MarkeyColors.brandSecondary }, 
+        primary: { main: "#f8c005" }, 
+        secondary:  { main: "#ffde1a" }, 
       },      
     },
     locale
