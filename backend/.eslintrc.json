@@ -25,7 +25,8 @@
     ],
     "import/prefer-default-export": "off",
     "no-console": "off",
-    "no-param-reassign": "off",    
+    "no-param-reassign": "off",
+    "prettier/prettier": "error",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -39,9 +40,6 @@
       {
         "avoidEscape": true
       }
-    ],
-    "prettier/prettier": ["error",{
-      "endOfLine": "auto"}
     ]
   },
   "settings": {
