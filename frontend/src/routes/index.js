@@ -3,7 +3,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import LoggedInLayout from "../layout";
-// import Dashboard from "../pages/Dashboard/";
+import Dashboard from "../pages/Dashboard/";
 import Tickets from "../pages/Tickets/";
 import Signup from "../pages/Signup/";
 import Login from "../pages/Login/";
@@ -20,7 +20,6 @@ import { WhatsAppsProvider } from "../context/WhatsApp/WhatsAppsContext";
 import Route from "./Route";
 import docs from "../pages/docs/";
 import tokens from "../pages/tokens/";
-import HomeDashBoard from "../markey/presentation/pages/home_dashboard/home_dashboard";
 
 const Routes = () => {
   return (
@@ -31,7 +30,7 @@ const Routes = () => {
           <Route exact path="/signup" component={Signup} />
           <WhatsAppsProvider>
             <LoggedInLayout>
-              <Route exact path="/" component={HomeDashBoard} isPrivate />
+              <Route exact path="/" component={Dashboard} isPrivate />
               <Route
                 exact
                 path="/tickets/:ticketId?"
