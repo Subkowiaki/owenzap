@@ -28,7 +28,7 @@ const Copyright = () => {
       © {new Date().getFullYear()}
       {" - "}
       <Link color="inherit" href="https://owenzap.com">
-        OwenZap - v {versionSystem}
+        Markey Suporte - v {versionSystem}
       </Link>
       {"."}
     </Typography>
