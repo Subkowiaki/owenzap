@@ -1,5 +1,7 @@
 import { AdminWebApiGetway } from "../../getways/http/admin_web_api";
+import { MarkeyColors } from "../../presentation/markey-desing-system/markey_colors";
 import { IHomeDashboardData } from "../entities/home_dashboard_data";
+import { IPieChart } from "../entities/piechart";
 import { EMonth } from "../enums/month";
 
 export async function getHomeDashboardData():Promise<IHomeDashboardData | "offline"> {
@@ -41,7 +43,7 @@ export async function getHomeDashboardData():Promise<IHomeDashboardData | "offli
     lines: [
       {
         title: "Lojas",
-        color: "#1664e8",
+        color: MarkeyColors.brandPrimary,
         dataKey: "total",
       },
     ]
@@ -52,7 +54,7 @@ export async function getHomeDashboardData():Promise<IHomeDashboardData | "offli
       lines: [
         {
           title: "Lojas",
-          color: "#1664e8",
+          color: MarkeyColors.brandPrimary,
           dataKey: "value",
         },
       ]
@@ -64,13 +66,24 @@ export async function getHomeDashboardData():Promise<IHomeDashboardData | "offli
     lines: [
       {
       title: "chats",
-      color: "#1664e8",
+      color: MarkeyColors.brandPrimary,
       dataKey: "value",
      }
     ]
   };   
   
-    
+  const tagsAnalytics: IPieChart[] = [];
+  dashboardData.tagListAndCount.tags.forEach((tag) => {
+    tagsAnalytics.push(
+      {
+        name: tag.name,
+        value: parseInt(tag.ticketsCount),
+        color: tag.color
+      });
+  });
+  
+
+
   return {  
     schedulesChart,
     totalSchedulesToday,
@@ -78,7 +91,14 @@ export async function getHomeDashboardData():Promise<IHomeDashboardData | "offli
     totalMonthSchedules,
     totalPaymentsMonth: dashboardData.payments.targetAllPayments.length,
     storesChart,
-    paymentsChart
+    paymentsChart,
+    tagsAnalytics,
+    totalTickets: dashboardData.tickets.totalTickets,
+    totalClosedTickets: dashboardData.tickets.totalClosedTickets,
+    totalTicketsToday: dashboardData.tickets.totalTicketsToday,
+    totalTicketsYesterday: dashboardData.tickets.totalTicketsYesterday,
+    totalTicketsCurrentMonth: dashboardData.tickets.totalTicketsCurrentMonth,
+    totalTicketsLastMonth: dashboardData.tickets.totalTicketsLastMonth,
   }
   
 }

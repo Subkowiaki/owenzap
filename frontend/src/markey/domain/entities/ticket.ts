@@ -1,0 +1,15 @@
+export interface ITicket{
+  id: number,
+  status: string,
+  unreadMessages: number,
+  lastMessage: string,
+  isGroup: boolean,
+  isBot: boolean,
+  channel: string,
+  userId: number,
+  contactId: number,
+  whatsappId: number,
+  queueId: number,
+  createdAt: Date,
+  updatedAt: Date,
+}

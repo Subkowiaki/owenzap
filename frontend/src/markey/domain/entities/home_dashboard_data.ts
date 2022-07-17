@@ -1,4 +1,5 @@
 import { ILineChart } from "./linechart";
+import { IPieChart } from "./piechart";
 
 export interface IHomeDashboardData{
   schedulesChart: ILineChart,
@@ -7,5 +8,13 @@ export interface IHomeDashboardData{
   totalMonthSchedules: number,
   totalPaymentsMonth: number,
   storesChart: ILineChart,
-  paymentsChart: ILineChart
+  paymentsChart: ILineChart,
+  totalTickets: number,
+  totalClosedTickets: number,
+  totalTicketsToday: number,
+  totalTicketsYesterday: number,
+  totalTicketsCurrentMonth: number,
+  totalTicketsLastMonth: number,
+  tagsAnalytics: IPieChart[],
+  allTickets?: ILineChart, 
 }
