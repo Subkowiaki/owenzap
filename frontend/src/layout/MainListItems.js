@@ -3,7 +3,6 @@ import { Link as RouterLink } from "react-router-dom";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import AddBusinessIcon from '@material-ui/icons-material/AddBusiness';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -11,7 +10,6 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import Divider from "@material-ui/core/Divider";
 import { Badge } from "@material-ui/core";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
-import DeviceThermostatIcon from "@material-ui/icons/DeviceThermostatIcon";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import SyncAltIcon from "@material-ui/icons/SyncAlt";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
@@ -84,8 +82,12 @@ const MainListItems = (props) => {
       <Divider />   
       <Divider />     
       <ListItemLink to="/payments" primary="Pagamentos" icon={<AccountBalanceWalletIcon />}/>
-      <ListItemLink to="/store-report" primary="Relatório" icon={<AddBusinessIcon />} />
-      <ListItemLink to="/store-check" primary="Relatório" icon={<DeviceThermostatIcon />}/>
+      <ListItemLink to="/store-report" primary="Relatório" icon={<i className="fa-solid fa-chart-simple fa-xl" />} />
+      <ListItemLink to="/store-check" primary="Checkup" icon={<i className="fa-solid fa-heart fa-xl" />} />
+      <Divider />   
+      <Divider /> 
+      <ListItemLink to="/payments-late" primary="Vencidos" icon={<i className="fas fa-business-time fa-xl" />} />
+      <ListItemLink to="/churn" primary="Churn" icon={<i className="fas fa-minus-circle fa-xl" />}/>
       <Divider />
       <ListSubheader inset> Configurações </ListSubheader>     
       <ListItemLink
