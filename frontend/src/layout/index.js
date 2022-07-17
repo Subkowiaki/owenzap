@@ -220,7 +220,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            Markey Suporte - v { versionSystem }
+            OwenZap - v { versionSystem }
             
           </Typography>
 
