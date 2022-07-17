@@ -21,7 +21,6 @@ import Route from "./Route";
 import docs from "../pages/docs/";
 import tokens from "../pages/tokens/";
 import HomeDashBoard from "../markey/presentation/pages/home_dashboard/home_dashboard";
-import Payments from "../markey/presentation/pages/payments/payments";
 
 const Routes = () => {
   return (
@@ -33,7 +32,6 @@ const Routes = () => {
           <WhatsAppsProvider>
             <LoggedInLayout>
               <Route exact path="/" component={HomeDashBoard} isPrivate />
-              <Route exact path="/payments" component={Payments} isPrivate />
               <Route
                 exact
                 path="/tickets/:ticketId?"
@@ -59,7 +57,7 @@ const Routes = () => {
               <Route exact path="/tokens" component={tokens} isPrivate />
               <Route exact path="/Queues" component={Queues} isPrivate />
               <Route exact path="/tags" component={Tags} isPrivate />
-              <Route exact path="/schedules" component={Schedules} isPrivate />              
+              <Route exact path="/schedules" component={Schedules} isPrivate />
             </LoggedInLayout>
           </WhatsAppsProvider>
         </Switch>
