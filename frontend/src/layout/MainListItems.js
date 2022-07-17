@@ -11,6 +11,7 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import Divider from "@material-ui/core/Divider";
 import { Badge } from "@material-ui/core";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
+import DeviceThermostatIcon from "@material-ui/icons/DeviceThermostatIcon";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import SyncAltIcon from "@material-ui/icons/SyncAlt";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
@@ -83,7 +84,8 @@ const MainListItems = (props) => {
       <Divider />   
       <Divider />     
       <ListItemLink to="/payments" primary="Pagamentos" icon={<AccountBalanceWalletIcon />}/>
-      <ListItemLink to="/store-report" primary="Relatório" icon={<AddBusinessIcon />}/>
+      <ListItemLink to="/store-report" primary="Relatório" icon={<AddBusinessIcon />} />
+      <ListItemLink to="/store-check" primary="Relatório" icon={<DeviceThermostatIcon />}/>
       <Divider />
       <ListSubheader inset> Configurações </ListSubheader>     
       <ListItemLink
