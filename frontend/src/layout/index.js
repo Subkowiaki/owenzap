@@ -45,9 +45,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
-    padding: "0 0 0 30px",
+    padding: "0 8px",
     minHeight: "48px",
-    background: "#f8c005",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -76,17 +75,14 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     position: "relative",
     whiteSpace: "nowrap",
-    border:"none",
     width: drawerWidth,
-    borderTopRightRadius: "50px 50px",
-    background: "#f8c005",    
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
   drawerPaperClose: {
-    overflowX: "hidden",    
+    overflowX: "hidden",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -183,19 +179,12 @@ const LoggedInLayout = ({ children }) => {
         open={drawerOpen}
       >
         <div className={classes.toolbarIcon}>
-          <img src={logo} width={"80%"} style={
-            {
-              marginLeft: '30px;',
-              marginRight: 'auto',
-              display: `${drawerOpen ? 'flex' : 'none'}`
-            }}
-          />
-          {
-            drawerOpen ? <IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
+          <img src={logo} width={"80%"} style={{ marginLeft: 'auto' ,marginRight:'auto', display:'flex'}} />
+          <IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
             <ChevronLeftIcon />
-          </IconButton> : <div></div>
-          }          
-        </div>       
+          </IconButton>
+        </div>
+        <Divider />
         <List>
           <MainListItems drawerClose={drawerClose} />
         </List>
@@ -209,8 +198,7 @@ const LoggedInLayout = ({ children }) => {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}
-        color="transparent"
-        elevation={0}
+        color={process.env.NODE_ENV === "development" ? "inherit" : "warning"}
       >
         <Toolbar variant="dense" className={classes.toolbar}>
           <IconButton
@@ -232,7 +220,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            {process.env.NODE_ENV === "development" ? `Markey Suporte - v ${ versionSystem }`  : ""}
+            Markey Suporte - v { versionSystem }
             
           </Typography>
 
