@@ -22,8 +22,6 @@ import docs from "../pages/docs/";
 import tokens from "../pages/tokens/";
 import HomeDashBoard from "../markey/presentation/pages/home_dashboard/home_dashboard";
 import Payments from "../markey/presentation/pages/payments/payments";
-import StoreReport from "../markey/presentation/pages/store-report/store_report";
-import HealthCheck from "../markey/presentation/pages/health-check/health_check";
 
 const Routes = () => {
   return (
@@ -36,8 +34,7 @@ const Routes = () => {
             <LoggedInLayout>
               <Route exact path="/" component={HomeDashBoard} isPrivate />
               <Route exact path="/payments" component={Payments} isPrivate />
-              <Route exact path="/store-report" component={StoreReport} isPrivate />
-              <Route exact path="/store-check" component={HealthCheck} isPrivate />
+              <Route exact path="/store-report" component={Payments} isPrivate />
               <Route
                 exact
                 path="/tickets/:ticketId?"
