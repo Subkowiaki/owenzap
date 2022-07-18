@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -75,16 +75,11 @@ const MainListItems = (props) => {
 
   return (
     <div onClick={drawerClose}>
-      <ListItemLink to="/" primary="Dashboard" icon={<DashboardOutlinedIcon />} />
-      <Divider />     
-      <ListItemLink to="/tickets" primary={i18n.t("mainDrawer.listItems.tickets")} icon={<WhatsAppIcon />}/>
-      <ListItemLink to="/contacts" primary={i18n.t("mainDrawer.listItems.contacts")} icon={<ContactPhoneOutlinedIcon />} />     
-      <Divider />   
-      <Divider />     
-      <ListItemLink to="/payments" primary="Pagamentos" icon={<AccountBalanceWalletIcon />}/>
-
-      <Divider />
-      <ListSubheader inset> Configurações </ListSubheader>     
+      <ListItemLink
+        to="/"
+        primary="Dashboard"
+        icon={<DashboardOutlinedIcon />}
+      />
       <ListItemLink
         to="/connections"
         primary={i18n.t("mainDrawer.listItems.connections")}
@@ -97,8 +92,19 @@ const MainListItems = (props) => {
             <SyncAltIcon />
           </Badge>
         }
-      />      
-         <ListItemLink
+      />
+      <ListItemLink
+        to="/tickets"
+        primary={i18n.t("mainDrawer.listItems.tickets")}
+        icon={<WhatsAppIcon />}
+      />
+
+      <ListItemLink
+        to="/contacts"
+        primary={i18n.t("mainDrawer.listItems.contacts")}
+        icon={<ContactPhoneOutlinedIcon />}
+      />
+      <ListItemLink
         to="/quickAnswers"
         primary={i18n.t("mainDrawer.listItems.quickAnswers")}
         icon={<QuestionAnswerOutlinedIcon />}
@@ -113,7 +119,6 @@ const MainListItems = (props) => {
         primary={i18n.t("mainDrawer.listItems.tags")}
         icon={<LocalOfferIcon />}
       />
-      
       <Can
         role={user.profile}
         perform="drawer-admin-items:view"
