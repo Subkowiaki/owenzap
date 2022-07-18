@@ -20,7 +20,6 @@
     "formik": "^2.2.0",
     "i18next": "^19.8.2",
     "i18next-browser-languagedetector": "^6.0.1",
-    "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.1.0",
     "material-ui-color": "^1.2.0",
     "mic-recorder-to-mp3": "^2.2.2",
