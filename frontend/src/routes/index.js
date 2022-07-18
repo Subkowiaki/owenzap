@@ -34,7 +34,6 @@ const Routes = () => {
             <LoggedInLayout>
               <Route exact path="/" component={HomeDashBoard} isPrivate />
               <Route exact path="/payments" component={Payments} isPrivate />
-              <Route exact path="/store-report" component={Payments} isPrivate />
               <Route
                 exact
                 path="/tickets/:ticketId?"
